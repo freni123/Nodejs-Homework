@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 // Database connection
 connectDB();
 
-// create sewrver using http
+// create server using http
 const server = http.createServer(app);
 
 server.listen(config.port, () => {

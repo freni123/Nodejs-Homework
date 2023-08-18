@@ -1,3 +1,4 @@
+const { options } = require("joi");
 const { User } = require("../models");
 
 /**
@@ -5,7 +6,19 @@ const { User } = require("../models");
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
-const createUser = async (reqBody) => {
+ const createUser = async (reqBody) => {
     return User.create(reqBody);
   };
-  module.exports = {createUser};
+  /**
+ * Get user list
+ * @param {object} filter
+ * @param {object} options
+ * @returns {Promise<User>}
+ */
+ const getUserList = async(req, res ) => {
+    return User.find();
+  }
+  module.exports = {
+    createUser,
+    getUserList
+  };

@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-/** create user */
+//  create user 
 const createUser = {
   body: Joi.object().keys({
     first_name: Joi.string().required().trim(),
@@ -9,4 +9,16 @@ const createUser = {
     password: Joi.string().required().trim(),
   }),
 };
-module.exports = createUser;
+// Get user List
+const getUserList = {
+  query: Joi.object().keys({
+    search: Joi.string().trim().allow(""),
+    sortBy: Joi.string().trim().allow(""),
+    limit: Joi.number().integer().allow(""),
+    page: Joi.number().integer().allow(""),
+  })
+};
+module.exports = {
+  createUser,
+  getUserList,
+};

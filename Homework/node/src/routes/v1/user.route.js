@@ -11,5 +11,10 @@ router.post(
     // validate(userValidation.createUser),
     userController.createUser
 );
+//GET User List
+router.get(
+    "/list",
+    userController.getUserList
+);
 
 module.exports = router;
