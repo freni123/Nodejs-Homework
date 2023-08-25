@@ -6,7 +6,7 @@ const createHotel = async (reqBody) => {
 };
 // get hotel-list
 const getHotelList = async (reqBody) => {
-    return hotel.find();
+    return hotel.find({$or:[{room_price:5000}]});
 };
 // get Hotel details by id
 const hotelById = async (hotelId) => {

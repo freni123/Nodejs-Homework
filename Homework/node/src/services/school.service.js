@@ -6,7 +6,7 @@ const createSchool = async (reqBody) => {
 };
 /** Get School-List*/
 const getSchoolList = async(req,res) => {
-    return school.find();
+    return school.find({$or:[{is_active:true}]});
 };
 //**  get Schooldetails by id */
 const schoolById = async (schoolId) => {

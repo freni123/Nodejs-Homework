@@ -6,7 +6,7 @@ const createStationary = async (reqBody) => {
 };
 //** Get Stationary List */
 const getStationaryList = async (req, res) => {
-    return stationary.find();
+    return stationary.find({$or:[{price:20}]});
 };
 //**  get Stationarydetails by id */
 const stationaryById = async (stationaryId) => {

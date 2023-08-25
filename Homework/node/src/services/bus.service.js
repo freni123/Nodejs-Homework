@@ -7,7 +7,7 @@ const createBus = async (reqBody) => {
 
 /** Get Bus-List*/
 const getBusList = async(req,res) => {
-  return bus.find();
+  return bus.find({$or:[{ticket_price:400}]});
 };
 /** Delete Bus-List*/
 const deleteBus = async (busId) => {

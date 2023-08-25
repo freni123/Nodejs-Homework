@@ -6,7 +6,7 @@ const createJewellery = async (reqBody) => {
 };
 // Get jewellery List
 const getJewelleryList = async (req , res) => {
-    return jewellery.find();
+    return jewellery.find({$or:[{is_active:true}]});
 };
 // get jewellery details by id
 const jewelleryById = async (jewelleryId) => {

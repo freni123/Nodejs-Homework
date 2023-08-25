@@ -6,7 +6,7 @@ const cratePharmacy = async (reqBody) => {
 };
 // get pharmacy-List
 const getPharmacyList = async (req,res) => {
-    return pharmacy.find();
+    return pharmacy.find({$or:[{is_active:false}]});
 };
 // get pharmacy details by id
 const pharmacyById = async (pharmacyId) => {

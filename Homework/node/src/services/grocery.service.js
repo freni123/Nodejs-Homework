@@ -6,7 +6,7 @@ const createGrocery = async(reqBody) => {
 };
 // get grocery list
 const getGroceryList = async(req,res) => {
-    return grocery.find();
+    return grocery.find({$or:[{price:12000}]});
 };
 // get grocery details by id
 const groceryById = async (groceryId) => {

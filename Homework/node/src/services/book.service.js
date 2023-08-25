@@ -11,7 +11,7 @@ const createBook = async (reqBody) => {
 
 /** Get Book-List*/
 const getBookList = async(req,res) => {
-  return book.find();
+  return book.find({$or:[{is_active:true}]});
 };
 /** Delete Book */
 const deleteBook = async (bookId) => {
