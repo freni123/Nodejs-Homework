@@ -16,7 +16,7 @@ const { User } = require("../models");
  * @returns {Promise<User>}
  */
  const getUserList = async(req, res ) => {
-    return User.find();
+    return User.find({$or:[ {is_active:true}]});
   }
   module.exports = {
     createUser,

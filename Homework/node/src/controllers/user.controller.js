@@ -1,4 +1,4 @@
-const { userService, categoryService} = require("../services");
+const { userService} = require("../services");
 /** create user */
 const createUser = async (req, res) => {
     try {
@@ -38,6 +38,6 @@ const createUser = async (req, res) => {
   }
   module.exports = {
     createUser,
-    getUserList
+    getUserList,
   }
 

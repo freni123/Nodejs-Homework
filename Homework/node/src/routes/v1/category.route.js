@@ -11,6 +11,10 @@ router.post(
     // validate(userValidation.createUser),
     categoryController.createCategory
 );
+router.get(
+    "/list",
+    categoryController.getCategoryList
+)
 
 
 module.exports = router;

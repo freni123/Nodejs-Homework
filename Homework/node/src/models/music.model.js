@@ -1,26 +1,30 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema(
+const musicSchema = new mongoose.Schema(
     {
-        first_name:{
+        title:{
             type:String,
             trim:true,
         },
-        last_name:{
+        artist:{
             type:String,
             trim:true,
         },
-        email:{
+        album:{
             type:String,
             trim:true,
         },
-        password:{
-            type:Number,
+        genre:{
+            type:String,
+            trim:true,
+        },
+        releaseDate:{
+            type:String,
             trim:true,
         },
         is_active:{
             type:Boolean,
-            trime:true,
+            default:true,
         },
     },
     {
@@ -28,7 +32,6 @@ const userSchema = new mongoose.Schema(
         versionKey:false,
     }
 );
+const music = mongoose.model('music',musicSchema);
+module.exports =  music;
 
-const User = mongoose.model('users',userSchema);
-
-module.exports=User;
