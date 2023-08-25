@@ -11,7 +11,7 @@ router.post(
     validate(schoolValidation.createSchool),
     schoolController.createSchool,
 ),
-//Get-Book List
+//Get-School List
 router.get(
     "/school-list",
     schoolController.getSchoolList,

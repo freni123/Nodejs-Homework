@@ -5,7 +5,7 @@ const createMovie = async (reqBody) => {
     return movie.create(reqBody);
   };
 
-/** Get Book-List*/
+/** Get Movie-List*/
 const getMovieList = async(req,res) => {
   return movie.find({$or:[{ticket_price:200}]});
 };

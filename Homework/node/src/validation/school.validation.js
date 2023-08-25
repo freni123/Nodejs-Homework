@@ -11,7 +11,7 @@ const createSchool = {
     faculty_subject: Joi.string().required().trim(),
   }),
 };
-/** Get Book List */
+/** Get School List */
 const getSchoolList = {
   query:Joi.object().keys({
     serach:Joi.string().trim().allow(""),

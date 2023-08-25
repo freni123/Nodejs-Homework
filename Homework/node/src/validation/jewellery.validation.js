@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-/** Create Book*/
+/** Create Jewellery*/
 const createJewellery = {
   body: Joi.object().keys({
     jewellers_name: Joi.string().required().trim(),
@@ -12,7 +12,7 @@ const createJewellery = {
     price: Joi.number().integer().required(),
   }),
 };
-/** Get Book List */
+/** Get Jewellery List */
 const getJewelleryList = {
   query:Joi.object().keys({
     serach:Joi.string().trim().allow(""),

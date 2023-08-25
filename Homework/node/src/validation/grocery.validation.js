@@ -4,7 +4,7 @@ const Joi = require("joi");
 const createGrocery = {
   body: Joi.object().keys({
     product_name:Joi.string().required().trim(),
-    productId:Joi.number().integer().required(),
+    productId:Joi.string().required().trim(),
     category:Joi.string().required().trim(),
     price:Joi.number().integer().required(),
     qunantity:Joi.number().integer().required(),

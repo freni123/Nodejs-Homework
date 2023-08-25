@@ -6,7 +6,7 @@ const grocerySchema = new mongoose.Schema({
         trim: true,
     },
     productId: {
-        type: Number,
+        type: String,
         trim: true,
     },
     category: {

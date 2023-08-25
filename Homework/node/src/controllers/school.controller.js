@@ -1,6 +1,6 @@
 const {schoolService} = require("../services");
 const { options } = require("joi");
-// create-book
+// create-School
 const createSchool = async(req,res) =>{
     try {
         const reqBody = req.body;
@@ -18,7 +18,7 @@ const createSchool = async(req,res) =>{
 
     }
 }
-// Get Book List
+// Get School List
 const getSchoolList = async (req,res) => {
     try {
         const getSchoolDetails = await schoolService.getSchoolList(req,res);

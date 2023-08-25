@@ -14,6 +14,6 @@ router.post(
 // Get-pharmacy List
 router.get(
     '/pharmacy-list',
-    pharmacyController.cratePharmacy
+    pharmacyController.getPharmacyList
 );
 module.exports = router;

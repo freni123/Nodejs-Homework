@@ -1,14 +1,14 @@
 const Joi = require("joi");
 
-/** Create Book*/
+/** Create Pharmacy*/
 const createPharmacy = {
   body: Joi.object().keys({
     Medication_name: Joi.string().required().trim(),
-    dosage: Joi.string().required().trim(),
+    dosage: Joi.number().integer().required(),
     manufacturer: Joi.string().required().trim(),
-    medicines_price: Joi.string().required().trim(),
+    medicines_price: Joi.number().integer().required(),
     patientName: Joi.string().required().trim(),
-    quantity: Joi.string().required().trim(),
+    quantity: Joi.number().integer().required(),
     }),
 };
 /** Get Pharmacy List */

@@ -11,6 +11,7 @@ router.post(
     // validate(userValidation.createUser),
     categoryController.createCategory
 );
+// get category list
 router.get(
     "/list",
     categoryController.getCategoryList

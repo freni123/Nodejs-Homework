@@ -4,8 +4,8 @@ const joi = require('joi');
 const createHotel = {
     body:joi.object().keys({
         hotel_name:joi.string().required().trim(),
-        room_number:joi.string().required().trim(),
-        room_price:joi.string().required().trim(),
+        room_number:joi.number().integer().required(),
+        room_price:jjoi.number().integer().required(),
         amenities:joi.string().required().trim(),
         hotel_location:joi.string().required().trim(),
 

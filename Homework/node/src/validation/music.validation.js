@@ -7,7 +7,7 @@ const createMusic = {
     artist: Joi.string().required().trim(),
     album: Joi.string().required().trim(),
     genre: Joi.string().required().trim(),
-    releaseDate: Joi.string().required().trim(),
+    releaseDate: Joi.number().integer().required(),
   }),
 };
 /** Get Music List */

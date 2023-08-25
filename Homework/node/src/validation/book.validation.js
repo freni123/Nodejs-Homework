@@ -6,7 +6,7 @@ const createBook = {
     book_title: Joi.string().required().trim(),
     book_author: Joi.string().required().trim(),
     book_desc: Joi.string().required().trim(),
-    book_price: Joi.string().required().trim(),
+    book_price: Joi.number().integer().required(),
   }),
 };
 /** Get Book List */

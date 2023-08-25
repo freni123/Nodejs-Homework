@@ -25,10 +25,10 @@ const getPharmacyList = async(req,res) => {
         res.status(200).json({
             success:true,
             message:"Pharmacy Deatails get Successfully!",
-            data:getPharmacyDetails,
+            data: getPharmacyDetails,
         })
     } catch (error) {
-        res.status(400);
+        res.status(400).json({ success: false, message: error.message });
 
     }
 }

@@ -4,7 +4,7 @@ const { school } = require("../models");
 const createSchool = async (reqBody) => {
     return school.create(reqBody);
   };
-/** Get Book-List*/
+/** Get School-List*/
 const getSchoolList = async(req,res) => {
     return school.find();
   }

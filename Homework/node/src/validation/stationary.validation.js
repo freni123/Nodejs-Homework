@@ -6,8 +6,8 @@ const createStationary = {
     stationary_name: Joi.string().required().trim(),
     product_id: Joi.string().required().trim(),
     product_name: Joi.string().required().trim(),
-    quantity: Joi.string().required().trim(),
-    price: Joi.string().required().trim(),
+    quantity: Joi.number().integer().required(),
+    price: Joi.number().integer().required(),
     supplier: Joi.string().required().trim(),
     }),
 };

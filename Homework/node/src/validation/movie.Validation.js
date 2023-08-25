@@ -7,11 +7,11 @@ const createMovie = {
     cinema_location: Joi.string().required().trim(),
     movie_name: Joi.string().required().trim(),
     movie_language: Joi.string().required().trim(),
-    avaliableseats: Joi.number().integer(),
-    screen_number: Joi.number().integer(),
+    avaliableseats: Joi.number().integer().required(),
+    screen_number: Joi.number().integer().required(),
     // movie_showtime: Joi.number().integer(),
     movie_director: Joi.string().required().trim(),
-    // releaseDate: Joi.date().required().trim(),
+    // releaseDate: Joi.string().required().trim(),
     ticket_price: Joi.number().integer(),
     })
 };
