@@ -28,7 +28,25 @@ const getBusList = async(req,res) => {
             data:getBusDetails,
         })
     } catch (error) {
-        res.status(400);
+        res.status(400).json({success:false,message:error.message});
   }
 }
-module.exports = {createBus,getBusList}
+// Delete Bus List
+const deleteBus = async (req,res) => {
+    try {
+        const busId = req.params.busId;
+        await busService.deleteBus(busId);
+        res.status(200).json({
+            success:true,
+            message:"Bus Record Delete successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+}
+
+module.exports = {
+    createBus,
+    getBusList,
+    deleteBus
+}

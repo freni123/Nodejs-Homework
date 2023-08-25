@@ -4,9 +4,21 @@ const {stationary} = require("../models");
 const createStationary = async (reqBody) => {
     return stationary.create(reqBody);
 };
-//**Get Stationary List */
+//** Get Stationary List */
 const getStationaryList = async (req, res) => {
     return stationary.find();
-}
-module.exports = {createStationary,getStationaryList,};
+};
+//**  get Stationarydetails by id */
+const stationaryById = async (stationaryId) => {
+    return stationary.findById(stationaryId);
+  };
+//** Delete stationary */
+  const deleteStationary= async (stationaryId) => {
+    return stationary.findByIdAndDelete(stationaryId);
+};
+module.exports = {
+    createStationary,
+    getStationaryList,
+    stationaryById,
+    deleteStationary};
 

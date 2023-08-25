@@ -25,14 +25,28 @@ const getBookList = async (req,res) => {
         const getBookDetails = await bookService.getBookList(req,res);
         res.status(200).json({
             success:true,
-            message:"Book details get successfully!",
+            message:"Book Record get successfully!",
             data:getBookDetails,
         })
     } catch (error) {
-        res.status(400);
+        res.status(400).json({success:false,message:error.message});
+    }
+}
+// Delete Book
+const deleteBook = async (req,res) => {
+    try {
+        const bookId = req.params.bookId;
+        await bookService.deleteBook(bookId);
+        res.status(200).json({
+            success:true,
+            message:"Book Record deleted successfully!",
+        })
+    } catch (error) {
+        res.status(400);json({success:false,message:error.message});
     }
 }
 module.exports = {
     createBook,
-        getBookList
+    getBookList,
+    deleteBook
 }

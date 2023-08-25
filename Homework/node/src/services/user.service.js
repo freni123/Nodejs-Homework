@@ -16,9 +16,18 @@ const { User } = require("../models");
  * @returns {Promise<User>}
  */
  const getUserList = async(req, res ) => {
-    return User.find({$or:[ {is_active:true}]});
+    return User.find();
   }
+  /**
+ * Delete user
+ * @param {ObjectId} userId
+ * @returns {Promise<User>}
+ */
+const deleteUser = async (userId) => {
+  return User.findByIdAndDelete(userId);
+};
   module.exports = {
     createUser,
-    getUserList
+    getUserList,
+    deleteUser
   };

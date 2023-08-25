@@ -16,4 +16,10 @@ router.get(
     "/jewellery-list",
     jewelleryController.getJewelleryList
 );
+//Delete jewellery
+router.delete(
+    "/delete-jewellery/:jewelleryId",
+    jewelleryController.deleteJewellery
+)
+
 module.exports = router;

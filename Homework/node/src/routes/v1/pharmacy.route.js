@@ -16,4 +16,9 @@ router.get(
     '/pharmacy-list',
     pharmacyController.getPharmacyList
 );
+//Delete Pharmacy
+router.delete(
+    '/delete-pharmacy/:pharmacyId',
+    pharmacyController.deletePharmacy
+)
 module.exports = router;

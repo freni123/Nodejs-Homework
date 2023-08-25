@@ -7,7 +7,7 @@ const stationarySchema = new mongoose.Schema(
             trim:true,
         },
         product_id:{
-            type:Number,
+            type:String,
             trim:true,
         },
         product_name:{

@@ -32,7 +32,21 @@ const getSchoolList = async (req,res) => {
     }
 
 }
+//Delete School
+const deleteSchool = async (req,res) => {
+    try {
+        const schoolId = req.params.schoolId;
+        await schoolService.deleteSchool(schoolId);
+        res.status(200).json({
+            success:true,
+            message:"School Record Delete Successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+}
 module.exports = {
         createSchool,
-        getSchoolList
+        getSchoolList,
+        deleteSchool
 }

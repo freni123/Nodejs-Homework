@@ -27,7 +27,7 @@ const jewellerySchema = new mongoose.Schema(
             trim:true,
         },
         price:{
-            type:String,
+            type:Number,
             trim:true,
         },
         is_active:{

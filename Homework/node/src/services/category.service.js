@@ -10,10 +10,20 @@ const createCategory = async (reqBody) => {
   };
   //**Get category List */
   const getCategoryList = async(req, res ) => {
-    return User.find();
+    return category.find();
   }
+//**Delete category */
+const deleteCategory = async (categoryId) => {
+  return category.findByIdAndDelete(categoryId);
+}
+/** Get Category detalis by id*/
+const categoryById = async (categoryId) => {
+  return category.findById(categoryId);
+}
 
   module.exports = {
     createCategory,
-    getCategoryList
+    getCategoryList,
+    deleteCategory,
+    categoryById
   };

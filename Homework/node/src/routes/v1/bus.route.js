@@ -16,5 +16,10 @@ router.get(
     "/bus-list",
     busController.getBusList
 );
+//Delete Bus
+router.delete(
+    "/delete-bus/:busId",
+    busController.deleteBus
+)
 module.exports = router;
 

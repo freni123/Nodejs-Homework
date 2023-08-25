@@ -24,14 +24,29 @@ const getMovieList = async (req,res) => {
         const getMovieDetails = await movieService.getMovieList(req,res);
         res.status(200).json({
             success:true,
-            message:"Movie details get successfully!",
+            message:"Movie List successfully!",
             data:getMovieDetails,
         })
     } catch (error) {
         res.status(400);
     }
 }
+//Delete Movie
+const deleteMovie = async (req,res) => {
+    try {
+        const movieId = req.params.movieId;
+        await movieService.deleteMovie(movieId);
+        res.status(200).json({
+            success:true,
+            message:"Movie Record Delete Successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+}
+
 module.exports = {
         createMovie,
-        getMovieList
+        getMovieList,
+        deleteMovie
 }

@@ -16,4 +16,9 @@ router.get(
     "/movie-list",
     movieController.getMovieList
 );
+//Delete Movie
+router.delete(
+    "/delete-movie/:movieId",
+    movieController.deleteMovie
+)
 module.exports = router;

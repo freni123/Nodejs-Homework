@@ -15,4 +15,9 @@ router.get(
     "/grocery-list",
     groceryController.getGroceryList
 );
+// Delete Grocery 
+router.delete(
+    "/delete-grocery/:groceryId",
+    groceryController.deleteGrocery
+)
 module.exports = router;

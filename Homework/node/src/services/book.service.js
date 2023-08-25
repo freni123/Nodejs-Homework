@@ -13,7 +13,12 @@ const createBook = async (reqBody) => {
 const getBookList = async(req,res) => {
   return book.find();
 };
+/** Delete Book */
+const deleteBook = async (bookId) => {
+  return book.findByIdAndDelete(bookId);
+}
 module.exports = {
   createBook,
   getBookList,
+  deleteBook
 }

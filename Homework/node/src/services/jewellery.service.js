@@ -8,7 +8,17 @@ const createJewellery = async (reqBody) => {
 const getJewelleryList = async (req , res) => {
     return jewellery.find();
 };
+// get jewellery details by id
+const jewelleryById = async (jewelleryId) => {
+    return jewellery.findById(jewelleryId);
+};
+// Delete jewellery
+const deleteJewellery = async (jewelleryId) => {
+    return jewellery.findByIdAndDelete(jewelleryId);
+};
 module.exports = {
     createJewellery,
-    getJewelleryList
+    getJewelleryList,
+    jewelleryById,
+    deleteJewellery
 }

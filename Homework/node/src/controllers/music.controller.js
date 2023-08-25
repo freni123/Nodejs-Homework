@@ -31,4 +31,22 @@ const getMusicList = async (req,res) => {
         res.status(400);
     }
 }
-module.exports = {createMusic,getMusicList}
+//Delete Music
+const deleteMusic = async (req,res) => {
+    try {
+        const musicId = req.params.musicId;
+        await musicService.deleteMusic(musicId);
+        res.status(200).json({
+            success:true,
+            message:"Music Record Delete Successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+}
+
+module.exports = {
+    createMusic,
+    getMusicList,
+    deleteMusic
+}

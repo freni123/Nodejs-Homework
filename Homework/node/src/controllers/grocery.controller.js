@@ -33,4 +33,21 @@ const getGroceryList = async (req,res) => {
         res.status(400);
     }
 }
-module.exports = {createGrocery,getGroceryList}
+// Delete Grocery
+const deleteGrocery = async (req,res) => {
+    try {
+        const groceryId = req.params.groceryId;
+        await groceryService.deleteGrocery(groceryId);
+        res.status(200).json({
+            success:true,
+            message:"Grocery Record Delete Successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+}
+module.exports = {
+    createGrocery,
+    getGroceryList,
+    deleteGrocery
+}

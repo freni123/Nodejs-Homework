@@ -30,10 +30,23 @@ const getStationaryList = async (req,res) => {
     } catch (error) {
         res.status(400);
     }
-
+}
+//Delete Stationary
+const deleteStationary = async (req,res) => {
+    try {
+        const stationaryId = req.params.stationaryId;
+        await stationaryService.deleteStationary(stationaryId);
+        res.status(200).json({
+            success:true,
+            message:"Stationary Record Delete Successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
 }
 
 module.exports = {
     createStationary,
-    getStationaryList
+    getStationaryList,
+    deleteStationary
 }

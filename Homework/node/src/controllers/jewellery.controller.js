@@ -32,4 +32,21 @@ const getJewelleryList = async (req,res) => {
         res.status(400);
     }
 }
-module.exports ={createJewellery,getJewelleryList}
+// Delete jewellery
+const deleteJewellery = async (req,res) => {
+    try {
+        const jewelleryId = req.params.jewelleryId;
+        await jewelleryService.deleteJewellery(jewelleryId);
+        res.status(200).json({
+            success:true,
+            message:"Jewellery Record Delete Successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+}
+module.exports ={
+    createJewellery,
+    getJewelleryList,
+    deleteJewellery
+}

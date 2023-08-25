@@ -15,5 +15,10 @@ router.post(
 router.get(
     "/school-list",
     schoolController.getSchoolList,
-    )
+),
+//Delete School
+router.delete(
+    '/delete-school/:schoolId',
+    schoolController.deleteSchool
+)
 module.exports = router;

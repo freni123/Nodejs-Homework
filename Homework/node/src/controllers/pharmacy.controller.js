@@ -32,7 +32,21 @@ const getPharmacyList = async(req,res) => {
 
     }
 }
+//Delete Pharmacy
+const deletePharmacy = async (req,res) => {
+    try {
+        const pharmacyId = req.params.pharmacyId;
+        await pharmacyService.deletePharmacy(pharmacyId);
+        res.status(200).json({
+            success:true,
+            message:"Pharmacy Record Delete Successfully!",
+        })
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+}
 module.exports = {
     cratePharmacy,
-    getPharmacyList
+    getPharmacyList,
+    deletePharmacy
 }
