@@ -12,13 +12,4 @@ const createJewellery = {
     price: Joi.number().integer().required(),
   }),
 };
-/** Get Jewellery List */
-const getJewelleryList = {
-  query:Joi.object().keys({
-    serach:Joi.string().trim().allow(""),
-    sortBy: Joi.string().trim().allow(""),
-    limit: Joi.number().integer().allow(""),
-    page: Joi.number().integer().allow(""),
-  })
-}
-module.exports = {createJewellery,getJewelleryList};
+module.exports = {createJewellery};

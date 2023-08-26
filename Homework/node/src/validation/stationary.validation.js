@@ -11,13 +11,4 @@ const createStationary = {
     supplier: Joi.string().required().trim(),
     }),
 };
-/** Get Stationary List */
-const getStationaryList = {
-  query:Joi.object().keys({
-    serach:Joi.string().trim().allow(""),
-    sortBy: Joi.string().trim().allow(""),
-    limit: Joi.number().integer().allow(""),
-    page: Joi.number().integer().allow(""),
-  })
-}
-module.exports = {createStationary,getStationaryList};
+module.exports = {createStationary};

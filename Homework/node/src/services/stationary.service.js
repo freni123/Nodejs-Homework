@@ -1,18 +1,18 @@
 const {stationary} = require("../models");
 
-// ** Create-Stationary */
+// Create-Stationary
 const createStationary = async (reqBody) => {
     return stationary.create(reqBody);
 };
-//** Get Stationary List */
+// Get Stationary List
 const getStationaryList = async (req, res) => {
     return stationary.find({$or:[{price:20}]});
 };
-//**  get Stationarydetails by id */
+// get Stationarydetails by id
 const stationaryById = async (stationaryId) => {
     return stationary.findById(stationaryId);
   };
-//** Delete stationary */
+// Delete stationary
   const deleteStationary= async (stationaryId) => {
     return stationary.findByIdAndDelete(stationaryId);
 };

@@ -12,7 +12,7 @@ const getMusicList = async(req,res) => {
 const musicById = async (musicId) => {
     return music.findById(musicId);
 };
-  // Delete music
+// Delete music
   const deleteMusic = async (musicId) => {
     return music.findByIdAndDelete(musicId);
 };

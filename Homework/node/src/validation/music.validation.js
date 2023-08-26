@@ -10,13 +10,4 @@ const createMusic = {
     releaseDate: Joi.string().required(),
   }),
 };
-/** Get Music List */
-const getMusicList = {
-  query:Joi.object().keys({
-    serach:Joi.string().trim().allow(""),
-    sortBy: Joi.string().trim().allow(""),
-    limit: Joi.number().integer().allow(""),
-    page: Joi.number().integer().allow(""),
-  })
-}
-module.exports = {createMusic,getMusicList};
+module.exports = {createMusic};

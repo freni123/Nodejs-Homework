@@ -8,16 +8,6 @@ const createHotel = {
         room_price:joi.number().integer().required(),
         amenities:joi.string().required().trim(),
         hotel_location:joi.string().required().trim(),
-
-    }),
+      }),
 };
-/** Get Book List */
-const getHotelList = {
-    query:joi.object().keys({
-      serach:joi.string().trim().allow(""),
-      sortBy: joi.string().trim().allow(""),
-      limit: joi.number().integer().allow(""),
-      page: joi.number().integer().allow(""),
-    })
-  }
-module.exports = {createHotel,getHotelList}
+module.exports = {createHotel}

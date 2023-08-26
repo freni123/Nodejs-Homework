@@ -11,13 +11,4 @@ const createBus = {
     driver_name: Joi.string().required().trim(),
   })
 };
-/** Get Book List */
-const getBusList = {
-  query:Joi.object().keys({
-    serach:Joi.string().trim().allow(""),
-    sortBy: Joi.string().trim().allow(""),
-    limit: Joi.number().integer().allow(""),
-    page: Joi.number().integer().allow(""),
-  })
-}
-module.exports = {createBus,getBusList};
+module.exports = {createBus};

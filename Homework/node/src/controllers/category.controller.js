@@ -1,6 +1,6 @@
 const { categoryService} = require("../services");
 const { options } = require("joi");
-/** create category */
+// create category 
 const createCategory = async (req, res) => {
     try {
       const reqBody = req.body;

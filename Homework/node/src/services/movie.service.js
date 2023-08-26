@@ -1,11 +1,10 @@
 const {movie} = require("../models");
 
-// **create-movie*/
+//create-movie
 const createMovie = async (reqBody) => {
     return movie.create(reqBody);
   };
-
-/** Get Movie-List*/
+//  Get Movie-List
 const getMovieList = async(req,res) => {
   return movie.find({$or:[{ticket_price:210}]});
 };

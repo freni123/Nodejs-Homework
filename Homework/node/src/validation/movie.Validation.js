@@ -9,19 +9,10 @@ const createMovie = {
     movie_language: Joi.string().required().trim(),
     avaliableseats: Joi.number().integer().required(),
     screen_number: Joi.number().integer().required(),
-    // movie_showtime: Joi.number().integer(),
+    movie_showtime: Joi.number().integer().allow(),
     movie_director: Joi.string().required().trim(),
-    // releaseDate: Joi.string().required().trim(),
+    releaseDate: Joi.string().required().allow(),
     ticket_price: Joi.number().integer(),
     })
 };
-/** Get Movie List */
-const getMovieList = {
-  query:Joi.object().keys({
-    serach:Joi.string().trim().allow(""),
-    sortBy: Joi.string().trim().allow(""),
-    limit: Joi.number().integer().allow(""),
-    page: Joi.number().integer().allow(""),
-  })
-}
-module.exports = {createMovie,getMovieList};
+module.exports = {createMovie};

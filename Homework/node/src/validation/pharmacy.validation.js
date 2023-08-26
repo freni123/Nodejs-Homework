@@ -11,13 +11,4 @@ const createPharmacy = {
     quantity: Joi.number().integer().required(),
     }),
 };
-/** Get Pharmacy List */
-const getPharmacyList = {
-  query:Joi.object().keys({
-    serach:Joi.string().trim().allow(""),
-    sortBy: Joi.string().trim().allow(""),
-    limit: Joi.number().integer().allow(""),
-    page: Joi.number().integer().allow(""),
-  })
-}
-module.exports = {createPharmacy,getPharmacyList};
+module.exports = {createPharmacy};

@@ -11,13 +11,4 @@ const createSchool = {
     faculty_subject: Joi.string().required().trim(),
   }),
 };
-/** Get School List */
-const getSchoolList = {
-  query:Joi.object().keys({
-    serach:Joi.string().trim().allow(""),
-    sortBy: Joi.string().trim().allow(""),
-    limit: Joi.number().integer().allow(""),
-    page: Joi.number().integer().allow(""),
-  })
-}
-module.exports = {createSchool,getSchoolList};
+module.exports = {createSchool};
