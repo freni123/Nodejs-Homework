@@ -1,4 +1,4 @@
-// const { LEGAL_TLS_SOCKET_OPTIONS } = require("mongodb");
+    // const { LEGAL_TLS_SOCKET_OPTIONS } = require("mongodb");
 const {bookService} = require("../services");
 const { options } = require("joi");
 // create-book
@@ -44,9 +44,24 @@ const deleteBook = async (req,res) => {
     } catch (error) {
         res.status(400);json({success:false,message:error.message});
     }
+};
+//  update Book
+const updateBook = async (req,res) => {
+    try {
+        const bookId = req.params.bookId;
+        const bookExists = await bookService.getBookById(bookId);
+        if(!bookExists){
+            throw new Error("Book not found!");
+        }
+        await bookService.updateBook(bookId,req.body);
+        res.status(200).json({success:true,message:"Book record update successfully!"});
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
 }
 module.exports = {
     createBook,
     getBookList,
-    deleteBook
+    deleteBook,
+    updateBook
 }

@@ -9,17 +9,22 @@ const getMovieList = async(req,res) => {
   return movie.find({$or:[{ticket_price:210}]});
 };
 // get Movie details by id
-const movieById = async (movieId) => {
+const getMovieById = async (movieId) => {
   return movie.findById(movieId);
 };
 // Delete movie
 const deleteMovie = async (movieId) => {
   return movie.findByIdAndDelete(movieId);
 };
+// Update Movie
+const updateMovie = async(movieId,updateBody) => {
+  return movie.findByIdAndUpdate(movieId,{$set:updateBody});
+};
 
 module.exports = {
     createMovie,
     getMovieList,
-    movieById,
-    deleteMovie
+    getMovieById,
+    deleteMovie,
+    updateMovie
 }

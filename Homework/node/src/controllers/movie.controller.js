@@ -17,7 +17,7 @@ const createMovie = async(req,res) =>{
               res.status(400).json({ success: false, message: error.message });
 
     }
-}
+};
 // Get movie List
 const getMovieList = async (req,res) => {
     try {
@@ -30,8 +30,8 @@ const getMovieList = async (req,res) => {
     } catch (error) {
         res.status(400);
     }
-}
-//Delete Movie
+};
+// Delete Movie
 const deleteMovie = async (req,res) => {
     try {
         const movieId = req.params.movieId;
@@ -43,10 +43,26 @@ const deleteMovie = async (req,res) => {
     } catch (error) {
         res.status(400).json({success:false,message:error.message});
     }
-}
+};
+// Update Movie
+const updateMovie = async (req,res) => {
+    try {
+        const movieId = req.params.movieId;
+        const movieExists = await movieService.getMovieById(movieId);
+        if(!movieExists){
+            throw new Error("Movie not found!");
+        }
+        await movieService.updateMovie(movieId,req.body);
+        res.status(200).json({success:true,message:"Movie record update successfully!"});
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+};
+
 
 module.exports = {
         createMovie,
         getMovieList,
-        deleteMovie
+        deleteMovie,
+        updateMovie
 }

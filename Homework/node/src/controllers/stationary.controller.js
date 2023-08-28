@@ -17,7 +17,7 @@ const createStationary = async(req,res) => {
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }
-}
+};
 // Get-Stationary List
 const getStationaryList = async (req,res) => {
     try {
@@ -30,7 +30,7 @@ const getStationaryList = async (req,res) => {
     } catch (error) {
         res.status(400);
     }
-}
+};
 //Delete Stationary
 const deleteStationary = async (req,res) => {
     try {
@@ -43,10 +43,25 @@ const deleteStationary = async (req,res) => {
     } catch (error) {
         res.status(400).json({success:false,message:error.message});
     }
-}
+};
+//Update Stationary
+const updateStationary = async (req,res) => {
+    try {
+        const stationaryId = req.params.stationaryId;
+        const stationaryExists = await stationaryService.getStationaryById(stationaryId);
+        if(!stationaryExists){
+            throw new Error("Stationary not found!");
+        }
+        await stationaryService.updateStationary(stationaryId,req.body);
+        res.status(200).json({success:true,message:"Stationary record update successfully!"});
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+};
 
 module.exports = {
     createStationary,
     getStationaryList,
-    deleteStationary
+    deleteStationary,
+    updateStationary
 }

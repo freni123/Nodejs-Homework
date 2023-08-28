@@ -20,5 +20,10 @@ router.get(
 router.delete(
     "/delete-book/:bookId",
     bookController.deleteBook
-)
+);
+// Update Book
+router.put(
+    "/update-book/:bookId",
+    bookController.updateBook
+);
 module.exports = router;

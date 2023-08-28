@@ -17,7 +17,7 @@ const cratePharmacy = async (req,res) => {
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }
-}
+};
 // Get Pharmacy List
 const getPharmacyList = async(req,res) => {
     try {
@@ -31,8 +31,8 @@ const getPharmacyList = async(req,res) => {
         res.status(400).json({ success: false, message: error.message });
 
     }
-}
-//Delete Pharmacy
+};
+// Delete Pharmacy
 const deletePharmacy = async (req,res) => {
     try {
         const pharmacyId = req.params.pharmacyId;
@@ -44,9 +44,25 @@ const deletePharmacy = async (req,res) => {
     } catch (error) {
         res.status(400).json({success:false,message:error.message});
     }
-}
+};
+// Update Pharmacy
+const updatePharmacy = async (req,res) => {
+    try {
+        const pharmacyId = req.params.pharmacyId;
+        const pharmacyExists = await pharmacyService.getPharmacyById(pharmacyId);
+        if(!pharmacyExists){
+            throw new Error("Pharmacy not found!");
+        }
+        await pharmacyService.updatePharmacy(pharmacyId,req.body);
+        res.status(200).json({success:true,message:"Pharmacy record update successfully!"});
+    } catch (error) {
+        res.status(400).json({success:false,message:error.message});
+    }
+};
+
 module.exports = {
     cratePharmacy,
     getPharmacyList,
-    deletePharmacy
+    deletePharmacy,
+    updatePharmacy
 }

@@ -16,9 +16,14 @@ router.get(
     '/pharmacy-list',
     pharmacyController.getPharmacyList
 );
-//Delete Pharmacy
+// Delete Pharmacy
 router.delete(
     '/delete-pharmacy/:pharmacyId',
     pharmacyController.deletePharmacy
+);
+// Update Pharmacy
+router.put(
+    '/update-pharmacy/:pharmacyId',
+    pharmacyController.updatePharmacy
 )
 module.exports = router;

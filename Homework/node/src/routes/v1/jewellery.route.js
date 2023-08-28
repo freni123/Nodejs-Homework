@@ -20,6 +20,11 @@ router.get(
 router.delete(
     "/delete-jewellery/:jewelleryId",
     jewelleryController.deleteJewellery
+);
+//Update jewellery
+router.put(
+    "/update-jewellery/:jewelleryId",
+    jewelleryController.updateJewellery
 )
 
 module.exports = router;

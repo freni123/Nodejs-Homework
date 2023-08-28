@@ -10,15 +10,20 @@ router.post(
     "/create-hotel",
     validate(hotelValidation.createHotel),
     hotelController.createHotel
-)
+);
 // get hotel list
 router.get(
     "/hotel-list",
     hotelController.getHotelList
-)
+);
 //Delete Hotel
 router.delete(
     "/delete-hotel/:hotelId",
     hotelController.deleteHotel
-)
+);
+//  Update Hotel
+router.put(
+    "/update-hotel/:hotelId",
+    hotelController.updateHotel
+);
 module.exports = router;

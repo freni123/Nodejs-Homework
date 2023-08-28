@@ -16,9 +16,14 @@ router.get(
     "/music-list",
     musicController.getMusicList
 );
-//Delete Music
+// Delete Music
 router.delete(
     "/delete-music/:musicId",
     musicController.deleteMusic
+);
+// Update Music
+router.put(
+    "/update-music/:musicId",
+    musicController.updateMusic
 )
 module.exports = router;

@@ -16,10 +16,15 @@ router.get(
     "/bus-list",
     busController.getBusList
 );
-//Delete Bus
+// Delete Bus
 router.delete(
     "/delete-bus/:busId",
     busController.deleteBus
+);
+// Update Bus
+router.put(
+    "/update-bus/:busId",
+    busController.updateBusDetails
 )
 module.exports = router;
 

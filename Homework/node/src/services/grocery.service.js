@@ -6,19 +6,24 @@ const createGrocery = async(reqBody) => {
 };
 // get grocery list
 const getGroceryList = async(req,res) => {
-    return grocery.find({$or:[{price:12000}]});
+    return grocery.find();
 };
 // get grocery details by id
-const groceryById = async (groceryId) => {
+const getGroceryById = async (groceryId) => {
     return grocery.findById(groceryId);
 };
 // Delete grocery
 const deleteGrocery = async (groceryId) => {
     return grocery.findByIdAndDelete(groceryId);
 };
+// Update Grocery
+const updateGrocery = async(groceryId,updateBody) => {
+    return grocery.findByIdAndUpdate(groceryId,{$set:updateBody});
+}
 module.exports = {
     createGrocery,
     getGroceryList,
-    groceryById,
-    deleteGrocery
+    getGroceryById,
+    deleteGrocery,
+    updateGrocery
 }

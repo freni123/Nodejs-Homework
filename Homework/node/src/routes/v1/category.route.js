@@ -16,10 +16,16 @@ router.get(
     "/category-list",
     categoryController.getCategoryList
 );
+// delete category
 router.delete(
     "/delete-category/:categoryId",
     categoryController.deleteCategory
-)
+);
+// update category
+// router.put(
+//     "update-category/:categoryId",
+//     categoryController.updateCategry
+// )
 
 
 module.exports = router;

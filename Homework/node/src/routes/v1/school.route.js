@@ -20,5 +20,10 @@ router.get(
 router.delete(
     '/delete-school/:schoolId',
     schoolController.deleteSchool
+),
+//Update School
+router.put(
+    '/update-school/:schoolId',
+    schoolController.updateSchool
 )
 module.exports = router;
