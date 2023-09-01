@@ -1,26 +1,25 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema(
+const studentSchema = new mongoose.Schema(
     {
-        first_name:{
+        school_name:{
             type:String,
             trim:true,
         },
-        last_name:{
+        student_name:{
             type:String,
             trim:true,
         },
-        email:{
+        student_details:{
             type:String,
             trim:true,
         },
-        password:{
+        student_study:{
+            type:String,
+            trim:true,
+        },
+        student_age:{
             type:Number,
-            trim:true,
-        },
-        hotel:{
-            type:mongoose.Types.ObjectId,
-            ref:"hotel",
         },
         is_active:{
             type:Boolean,
@@ -33,6 +32,6 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-const User = mongoose.model('users',userSchema);
+const student = mongoose.model('student',studentSchema);
 
-module.exports=User;
+module.exports = student;

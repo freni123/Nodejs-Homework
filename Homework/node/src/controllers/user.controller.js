@@ -62,8 +62,7 @@ const updateDetails = async (req, res) => {
     if (!userExists) {
       throw new Error("User not found!");
     }
-
-    await userService.updateDetails(userId, req.body);
+      await userService.updateDetails(userId, req.body);
 
     res
       .status(200)

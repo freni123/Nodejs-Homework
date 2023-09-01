@@ -36,6 +36,7 @@ const movieSchema = new mongoose.Schema(
         },
         releaseDate:{
             type:Date,
+            default:Date.now(),
         },
         ticket_price:{
             type:Number,

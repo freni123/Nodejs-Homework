@@ -18,6 +18,10 @@ const bookSchema = new mongoose.Schema(
         type:Number,
         trim:true,
        },
+       stationary:{
+        type:mongoose.Types.ObjectId,
+        ref:"stationary",
+       },
         is_active:{
         type:Boolean,
         default:true,

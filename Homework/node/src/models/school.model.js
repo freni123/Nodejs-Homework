@@ -22,9 +22,13 @@ const schoolSchema = new mongoose.Schema(
         type:String,
         trim:true,
       },
-      student_name:{
+      student_details:{
         type:String,
         trim:true,
+      },
+      student:{
+        type:mongoose.Types.ObjectId,
+        ref:"student",
       },
       is_active:{
         type:Boolean,

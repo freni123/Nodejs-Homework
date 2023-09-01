@@ -14,6 +14,10 @@ const productSchema = new mongoose.Schema(
             type:String,
             trime:true,
         },
+        category:{
+            type:mongoose.Types.ObjectId,
+            ref:"category",
+        },
         is_active:{
             type:Boolean,
             trime:true,

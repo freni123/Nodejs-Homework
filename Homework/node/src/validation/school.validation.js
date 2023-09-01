@@ -7,7 +7,7 @@ const createSchool = {
     address: Joi.string().required().trim(),
     principal_name: Joi.string().required().trim(),
     faculty_name: Joi.string().required().trim(),
-    student_name: Joi.string().required().trim(),
+    student_details: Joi.string().required().trim(),
     faculty_subject: Joi.string().required().trim(),
   }),
 };

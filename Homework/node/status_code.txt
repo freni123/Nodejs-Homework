@@ -1,0 +1,22 @@
+// Status Code
+
+201:created
+202:accepted
+200:ok
+207:Multi Status
+208:Already Reported
+301:moved Permanently
+302:found
+400:Bad Request
+401:Unauthorized
+402:Payment Required
+403:forbidden
+404:Page Not Found
+405:Method Not Allowed
+406:Not Acceptable
+422:unprocessable entity / Validation Error
+500:Internal Server Error
+501:Not Implemented
+502:Bad Gateway
+503:Service Unavailable
+
