@@ -1,24 +1,21 @@
 const mongoose = require('mongoose');
 
-const cartSchema = new mongoose.Schema(
+const reviewSchema = new mongoose.Schema(
     {
-        items_name:{
+        user:{
             type:String,
             trim:true,
         },
-        product_code:{
+        product:{
             type:String,
             trim:true,
         },
-        quantity:{
+        rating:{
             type:Number,
         },
-        discount:{
-            type:Number,
-        },
-        users:{
-            type:mongoose.Types.ObjectId,
-            ref:"users"
+        comment:{
+            type:String,
+            trim:true,
         },
         is_active:{
             type:Boolean,
@@ -31,6 +28,6 @@ const cartSchema = new mongoose.Schema(
     }
 );
 
-const cart = mongoose.model('cart',cartSchema);
+const review = mongoose.model('review',reviewSchema);
 
-module.exports = cart;
+module.exports = review;

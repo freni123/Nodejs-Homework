@@ -1,11 +1,14 @@
 const express = require('express');
-const {cartController} = require('../../controller')
+const {cartController} = require('../../controller');
+const { cartValidation } = require('../../validation');
+const validate = require('../../middlewares/validate')
 
 const router = express.Router();
 
 // create-cart
 router.post(
     '/create-cart',
+    validate(cartValidation.createCart),
     cartController.createCart
 );
 // get cart list
@@ -18,4 +21,9 @@ router.delete(
     "/delete-cart/:cartId",
     cartController.deleteCart
 );
+// update cart
+router.put(
+    "/update-cart/:cartId",
+    cartController.updateCart
+)
 module.exports = router;

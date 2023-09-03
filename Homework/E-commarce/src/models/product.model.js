@@ -21,6 +21,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         trim: true,
     },
+    categorys:{
+        type:mongoose.Types.ObjectId,
+        ref:"categorys",
+    },
     stock: {
         type: Number,
         trim: true,
