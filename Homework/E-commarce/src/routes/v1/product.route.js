@@ -3,9 +3,7 @@ const {productController} = require('../../controller');
 const {productValidation} = require('../../validation');
 const validate  = require('../../middlewares/validate');
 
-
 const router = express.Router();
-
 
 // create-product
 router.post(

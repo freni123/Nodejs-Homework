@@ -17,6 +17,10 @@ const orderSchema = new mongoose.Schema(
         total:{
             type:Number,
         },
+        is_active:{
+            type:Boolean,
+            default:true,
+        },
     },
     {
         timestamps:true,

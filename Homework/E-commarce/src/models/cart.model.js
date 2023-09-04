@@ -20,6 +20,14 @@ const cartSchema = new mongoose.Schema(
             type:mongoose.Types.ObjectId,
             ref:"users"
         },
+        product:{
+            type:mongoose.Types.ObjectId,
+            ref:"product"
+        },
+        order:{
+            type:mongoose.Types.ObjectId,
+            ref:"order"
+        },
         is_active:{
             type:Boolean,
             default:true,

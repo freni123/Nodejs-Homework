@@ -1,11 +1,14 @@
 const express = require('express');
 const {orderController} = require('../../controller');
+const {orderValidation} = require('../../validation');
+const validate  = require('../../middlewares/validate');
 
 const router = express.Router();
 
 // create-order
 router.post(
     '/create-order',
+    validate(orderValidation,createOrder),
     orderController.createOrder
 );
 // get order list

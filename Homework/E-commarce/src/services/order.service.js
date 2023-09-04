@@ -6,7 +6,7 @@ const createOrder = async(reqBody) => {
 };
 // get order
 const getOrderList = async (req,res) => {
-    return order.find();
+    return order.find({$or:[{is_active:false}]});
 };
 // get order details by id
 const getOrderById = async(orderId) => {

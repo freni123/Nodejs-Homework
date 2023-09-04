@@ -17,9 +17,8 @@ const productSchema = new mongoose.Schema({
         type: Number,
         trim: true,
     },
-    quality: {
-        type: String,
-        trim: true,
+    quantity: {
+        type: Number,
     },
     categorys:{
         type:mongoose.Types.ObjectId,
