@@ -11,13 +11,11 @@ const travelSchema = new mongoose.Schema(
             trim:true,
         },
         startDate:{
-            type:Date,
-            default:Date.Now,
+            type:String,
             trim:true,
         },
         endDate:{
-            type:Date,
-            default:Date.Now,
+            type:String,
             trim:true,
         },
         route:{
@@ -27,10 +25,6 @@ const travelSchema = new mongoose.Schema(
         price:{
             type:Number,
             trim:true,
-        },
-        bus:{
-            type:mongoose.Types.ObjectId,
-            ref:"bus",
         },
         is_active:{
             type:Boolean,

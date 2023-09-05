@@ -9,6 +9,8 @@ const createBus = {
     ticket_price:  Joi.number().integer().required(),
     route_name: Joi.string().required().trim(),
     driver_name: Joi.string().required().trim(),
+    travel: Joi.string().required().trim(),
+
   })
 };
 module.exports = {createBus};

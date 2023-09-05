@@ -6,7 +6,8 @@ const createMovie = async (reqBody) => {
 };
 // Get Movie-List
 const getMovieList = async(req,res) => {
-  return movie.find({$or:[{ticket_price:210}]});
+  // return movie.find({$or:[{ticket_price:210}]}).populate("music");
+  return movie.find().populate("music");
 };
 // get Movie details by id
 const getMovieById = async (movieId) => {

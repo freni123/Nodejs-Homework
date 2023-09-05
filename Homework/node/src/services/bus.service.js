@@ -6,7 +6,7 @@ const createBus = async (reqBody) => {
 };
 // Get Bus-List
 const getBusList = async(req,res) => {
-  return bus.find({$or:[{ticket_price:400}]});
+  return bus.find({$or:[{is_active:true}]}).populate("travel");
 };
 //  Delete Bus-List
 const deleteBus = async (busId) => {

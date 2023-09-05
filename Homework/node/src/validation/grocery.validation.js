@@ -9,6 +9,7 @@ const createGrocery = {
     price:Joi.number().integer().required(),
     qunantity:Joi.number().integer().required(),
     supplier:Joi.string().required().trim(),
+    categorys:Joi.string().required().trim(),
   }),
 };
 module.exports = {createGrocery};

@@ -10,3 +10,4 @@ module.exports.jewelleryValidation = require("./jewellery.validation");
 module.exports.movieValidation = require("./movie.Validation");
 module.exports.musicValidation = require("./music.validation");
 module.exports.groceryValidation = require("./grocery.validation");
+module.exports.travelValidation = require("./travel.validation");

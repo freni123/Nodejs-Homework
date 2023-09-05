@@ -25,9 +25,9 @@ const grocerySchema = new mongoose.Schema({
         type:String,
         trim:true,
     },
-    category:{
+    categorys:{
         type:mongoose.Types.ObjectId,
-        ref:"category",
+        ref:"categorys",
     },
     is_active: {
         type: Boolean,

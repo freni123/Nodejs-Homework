@@ -7,6 +7,7 @@ const createBook = {
     book_author: Joi.string().required().trim(),
     book_desc: Joi.string().required().trim(),
     book_price: Joi.number().integer().required(),
+    stationary: Joi.string().required().trim(),
   }),
 };
 

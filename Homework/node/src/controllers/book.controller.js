@@ -1,4 +1,3 @@
-    // const { LEGAL_TLS_SOCKET_OPTIONS } = require("mongodb");
 const {bookService} = require("../services");
 const { options } = require("joi");
 // create-book

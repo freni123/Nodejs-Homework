@@ -41,6 +41,10 @@ const movieSchema = new mongoose.Schema(
         ticket_price:{
             type:Number,
         },
+        music:{
+            type:mongoose.Types.ObjectId,
+            ref:"music"
+        },
         is_active:{
             type:Boolean,
             default:true,

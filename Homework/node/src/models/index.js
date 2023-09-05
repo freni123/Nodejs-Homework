@@ -1,4 +1,4 @@
-// module.exports.product = require("./product");
+module.exports.product = require("./product");
 module.exports.User = require("./user");
 module.exports.category = require("./category");
 module.exports.book = require("./book.model");
@@ -13,3 +13,4 @@ module.exports.movie = require("./movie.model");
 module.exports.music =  require("./music.model");
 module.exports.grocery = require("./grocery.model");
 module.exports.school = require("./school.model");
+

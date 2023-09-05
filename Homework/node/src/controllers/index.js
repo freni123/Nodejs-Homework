@@ -10,4 +10,7 @@ module.exports.jewelleryController = require("./jewellery.controller");
 module.exports.movieController = require("./movie.controller");
 module.exports.musicController = require("./music.controller");
 module.exports.groceryController = require("./grocery.controller");
+module.exports.travelController = require("./travel.controller");
+
+
 

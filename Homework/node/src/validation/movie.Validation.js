@@ -11,7 +11,8 @@ const createMovie = {
     screen_number: Joi.number().integer().required(),
     movie_showtime: Joi.number().integer().allow(),
     movie_director: Joi.string().required().trim(),
-    releaseDate: Joi.string().required().allow(),
+    releaseDate: Joi.string().allow(),
+    music: Joi.string().required().trim(),
     ticket_price: Joi.number().integer(),
     })
 };

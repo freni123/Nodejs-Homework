@@ -6,7 +6,7 @@ const createGrocery = async(reqBody) => {
 };
 // get grocery list
 const getGroceryList = async(req,res) => {
-    return grocery.find();
+    return grocery.find({$or:[{is_active:true}]}).populate("categorys");
 };
 // get grocery details by id
 const getGroceryById = async (groceryId) => {
