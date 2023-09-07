@@ -7,8 +7,8 @@ const createOrder= {
     products: Joi.string().required().trim(),
     status:Joi.string().required().trim(),
     total:Joi.number().integer().required(),
-  }),
+  })
 };
 module.exports = {
-    createOrder,
+  createOrder
 };

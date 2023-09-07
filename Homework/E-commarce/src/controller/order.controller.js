@@ -18,7 +18,7 @@ const createOrder = async (req,res) => {
     }
 };
 //get order list
-const getOredrList = async (req,res) =>{
+const getOrderList = async (req,res) =>{
     try {
         const getOrder = await orderService.getOrderList(res.res);
         const getUser = await userService.getUserList(req, res);
@@ -67,7 +67,7 @@ const updateOrder = async (req,res) => {
 };
 module.exports = {
     createOrder,
-    getOredrList,
+    getOrderList,
     deleteOrder,
     updateOrder
 };

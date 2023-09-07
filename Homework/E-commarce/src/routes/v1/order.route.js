@@ -8,13 +8,13 @@ const router = express.Router();
 // create-order
 router.post(
     '/create-order',
-    validate(orderValidation,createOrder),
+    validate(orderValidation.createOrder),
     orderController.createOrder
 );
 // get order list
 router.get(
     '/order-list',
-    orderController.getOredrList
+    orderController.getOrderList
 );
 // delete order
 router.put(

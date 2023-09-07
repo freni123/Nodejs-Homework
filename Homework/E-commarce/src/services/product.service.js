@@ -7,7 +7,7 @@ const createProduct = async(reqBody) => {
 };
 // get product-list
 const getProductList = async(req,res) => {
-    return product.find({$or:[{price:100}]});
+    return product.find({$or:[{price:100}]}).populate('categorys');
 };
 // get product details by id
 const getProductById = async(productId) => {

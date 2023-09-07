@@ -7,8 +7,9 @@ const createProduct = {
     product_code: Joi.string().required().trim(),
     product_desc: Joi.string().required().trim(),
     quantity: Joi.number().integer().required(),
-    stock: Joi.string().required().trim(),
+    stock: Joi.number().integer().allow(),
     price: Joi.number().integer().required(),
+    categorys: Joi.string().required().trim(),
   }),
 };
 module.exports = {

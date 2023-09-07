@@ -8,7 +8,7 @@ const router = express.Router();
 // create-payment
 router.post(
     '/create-payment',
-    validate(paymentValidation,createPayment),
+    validate(paymentValidation.createPayment),
     paymentController.createPayment
 );
 // get payment list
