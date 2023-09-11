@@ -1,0 +1,33 @@
+h2{
+    text-align: center;
+    margin-top: 10px;
+}
+img{
+    size: cover;
+}
+.cart-container{
+    margin: 20px;
+    border: 2px solid black;
+}
+.cart {
+    border-collapse: collapse;
+    width: 100%;
+}
+.cart tr th{
+    border: 1px solid black;
+    background-color:#87ceeb;
+    text-align: center;
+}
+.cart th, .cart td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align:justify;
+    font-weight: bold 400;
+}
+.cart th {
+    color: black;
+    border: 1px solid black;
+}
+/* .cart tr:nth-child(even) {
+    background-color: #ffffff;
+} */

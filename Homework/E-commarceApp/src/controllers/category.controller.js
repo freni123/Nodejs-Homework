@@ -11,7 +11,7 @@ const createCategory = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Category Create Successfully!",
-            data: category,
+            data: {category},
         });
     } catch (error) {
         res.status(400).json({
@@ -27,9 +27,7 @@ const getCategoryList = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Category details get successfully!",
-            data: {
-                getCategory
-            },
+            data: getCategory
         })
     } catch (error) {
         res.status(400).json({
