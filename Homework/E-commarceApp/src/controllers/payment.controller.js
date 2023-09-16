@@ -26,7 +26,7 @@ const getPaymentList = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Payment details list successfully!",
-            data: {getPayment}
+            data:getPayment
         })
     } catch (error) {
         res.status(400).json({success:false,message:error.message});

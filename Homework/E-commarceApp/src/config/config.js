@@ -1,22 +1,29 @@
-const joi = require('joi');
-const dotenv = require('dotenv');
+const joi = require("joi");
+const dotenv = require("dotenv");
 
-dotenv.config();
+dotenv.config({path: "./.env"});
 
 const envVarsSchema = joi.object({
-    PORT: joi.number().default(3000),
-    MONGODB_URL: joi.string().trim().description("Mongodb url"),
+  PORT: joi.number().default(3000),
+  MONGODB_URL: joi.string().trim().description("Mongodb url"),
+  JWT_SECRET_KEY: joi.string().description("jwt secret key"),
+  BASE_URL: joi.string().trim().description("Base URL"),
 });
 const { value: envVars, error } = envVarsSchema
-    .prefs({ errors: { label: "key" } })
-    .validate(process.env);
+  .prefs({ errors: { label: "key" } })
+  .validate(process.env);
+
 module.exports = {
-    port: envVars.PORT,
-    mongodb: {
-        url: envVars.MONGODB_URL,
-        options: {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        },
+  port: envVars.PORT,
+  mongodb: {
+    url: envVars.MONGODB_URL,
+    options: {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     },
+  },
+  base_url: envVars.BASE_URL,
+  jwt: {
+    secret_key: envVars.JWT_SECRET_KEY,
+  },
 };

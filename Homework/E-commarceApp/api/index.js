@@ -44,3 +44,7 @@ function tableData() {
                 </div>
                 `;
 }
+// gallery 
+function fetchData() {
+    
+}

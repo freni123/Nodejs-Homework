@@ -29,7 +29,7 @@ const getUserList = async (req, res) => {
             data: {
                 getUser
             }
-        })
+        });
     } catch (error) {
         res.status(400).json.json({
             success: false,

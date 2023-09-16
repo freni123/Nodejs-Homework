@@ -27,6 +27,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.options("*", cors());
 
+app.use(express.static("./public"));
+
 //Routes Namespace upload files
 app.use("/v1", routes);
 

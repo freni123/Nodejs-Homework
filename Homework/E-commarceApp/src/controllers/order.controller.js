@@ -27,9 +27,7 @@ const getOrderList = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Order details get successfully!",
-            data: {
-                getOrder
-            },
+            data:getOrder,
         })
     } catch (error) {
         res.status(400).json({
