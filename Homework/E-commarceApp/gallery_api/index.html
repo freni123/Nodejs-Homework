@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Gallery</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-weight:600px;
+        color:purple;
+        margin-top: 20px;
+        text-transform: capitalize;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .gallery {
+        float: left;
+        width: 23%;
+        margin: 3% 1%;
+        text-align: center;
+        padding: 10px 0 1% 0;
+        border: 1.7px solid #000000;
+        border-radius: 15px;
+        background-color: #cab7dc1a;
+      }
+
+      .gallery-image {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .gallery-image:hover {
+        transform: scale(1.1);
+      }
+
+      @media screen and (max-width: 980px) {
+        #gallery1 {
+          width: 30%;
+          text-align: center;
+          margin: 1.66%;
+        }
+      }
+
+      @media screen and (max-width: 790px) {
+        .gallery {
+          width: 47%;
+          margin: 1% 1%;
+        }
+        #gallery1 {
+          margin: 5% 1%;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .gallery {
+          width: 100%;
+        }
+        #gallery1 {
+          margin: 2% 0;
+        }
+      }
+      #gallery1::after {
+        display: block;
+        clear: both;
+      }
+      .gallery:hover {
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1> E-COMMERCE PROJECT GALLERY</h1>
+      <div id="gallery1"></div>
+    </div>
+    <div id="galleryList"></div>
+    <script>
+      data = JSON.parse(localStorage.getItem("data")) || [];
+
+      // api url
+      const apiUrl = "http://localhost:5050/v1/gallery/gallery-list";
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((apiData) => {
+          localStorage.setItem("data", JSON.stringify(apiData.data));
+          console.log(apiData.data);
+          fetchData();
+        })
+        .catch((error) => console.log(error));
+
+      function fetchData() {
+        const galleryList = document.getElementById("galleryList");
+        galleryList.innerHTML = `
+   ${data
+     .map(
+       (item) => `
+       <div class="gallery">
+       <img class="gallery-image" src="${item.gallery_image}"/>
+       <p class="gallery-name">${item.image_name}</p>
+   </div>
+  `
+     )
+     .join("")}
+    `;
+      }
+    </script>
+  </body>
+</html>

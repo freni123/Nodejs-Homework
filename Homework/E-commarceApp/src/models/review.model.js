@@ -1,26 +1,29 @@
 const mongoose = require("mongoose");
 
-const userreviewSchema = new mongoose.Schema({
+const userreviewSchema = new mongoose.Schema(
+  {
     user: {
-        type: mongoose.Types.ObjectId,
-        ref: "users"
+      type: mongoose.Types.ObjectId,
+      ref: "users",
     },
     product: {
-        type: mongoose.Types.ObjectId,
-        ref: "products"
+      type: mongoose.Types.ObjectId,
+      ref: "products",
     },
     rating: {
-        type: String,
-        trim: true,
+      type: String,
+      trim: true,
     },
     comment: {
-        type: String,
-        trim: true,
+      type: String,
+      trim: true,
     },
-}, {
+  },
+  {
     timestamps: true,
     versionKey: false,
-});
+  }
+);
 
 const userReview = mongoose.model("userreview", userreviewSchema);
 

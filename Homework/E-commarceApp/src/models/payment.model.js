@@ -1,31 +1,34 @@
 const mongoose = require("mongoose");
 
-const paymentSchema = new mongoose.Schema({
+const paymentSchema = new mongoose.Schema(
+  {
     user: {
-        type: mongoose.Types.ObjectId,
-        ref: "users"
+      type: mongoose.Types.ObjectId,
+      ref: "users",
     },
     order: {
-        type: mongoose.Types.ObjectId,
-        ref: "order",
+      type: mongoose.Types.ObjectId,
+      ref: "order",
     },
     paymentMethod: {
-        type: String,
-        trim: true,
+      type: String,
+      trim: true,
     },
     transactionId: {
-        type: String,
+      type: String,
     },
     amount: {
-        type: Number,
+      type: Number,
     },
     status: {
-        type: String,
-        default: true,
+      type: String,
+      default: true,
     },
-}, {
+  },
+  {
     timestamps: true,
-});
+  }
+);
 
 const payment = mongoose.model("payment", paymentSchema);
 

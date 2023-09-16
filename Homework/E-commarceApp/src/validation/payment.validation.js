@@ -10,5 +10,5 @@ const createPayment = {
   }),
 };
 module.exports = {
-    createPayment,
+  createPayment,
 };

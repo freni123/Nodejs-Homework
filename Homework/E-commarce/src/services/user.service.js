@@ -1,6 +1,4 @@
-const {options} = require("joi");
 const {user} = require("../models");
-
 //create-user
 const createUser = async (reqBody) => {
     return user.create(reqBody);

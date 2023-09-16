@@ -23,12 +23,14 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(bodyParser.json());
 
+app.use(express.static("./public"));
 //Routes Namespace upload files
 app.use("/v1", routes);
 
 app.use((req,res,next) => {
     next(new Error("Route not Found!"));
 });
+
 //Database connection
 connectDB();
 
@@ -36,5 +38,5 @@ connectDB();
 const server = http.createServer(app);
 
 server.listen(config.port, () => {
-    console.log("server listening on port");
-})
+    console.log("server listening");
+});

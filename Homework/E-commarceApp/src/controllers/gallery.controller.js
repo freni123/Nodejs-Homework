@@ -5,7 +5,7 @@ const createGallery = async (req, res) => {
     const reqBody = req.body;
 
     if (req.file) {
-      reqBody.product_image = req.file.filename;
+      reqBody.gallery_image = req.file.filename;
     } else {
       throw new Error("Gallery image is required!");
     }
@@ -25,65 +25,65 @@ const createGallery = async (req, res) => {
   }
 };
 
-// // get gallery list
-// const getGalleryList = async (req, res) => {
-//   try {
-//     const getGallery = await galleryService.getGalleryList(req, res);
-//     res.status(200).json({
-//       succcess: true,
-//       message: "gallery get successfully!",
-//       data: getGallery,
-//     });
-//   } catch (error) {
-//     res.status(400).json({
-//       success: false,
-//       message: error.message,
-//     });
-//   }
-// };
-// // delete gallery list
-// const deleteGallery = async (req, res) => {
-//   try {
-//     const galleryId = req.params.galleryId;
-//     const galleryExis = await galleryService.getGalleryById(galleryId);
-//     if (!galleryExis) {
-//       throw new Error("Gallery not found!");
-//     }
-//     await galleryService.deleteGallery(galleryId);
-//     res.status(200).json({
-//       succcess: true,
-//       message: "Gallery delete successfully!",
-//     });
-//   } catch (error) {
-//     res.status(400).json({
-//       success: false,
-//       message: error.message,
-//     });
-//   }
-// };
-// // update gallery
-// const updateGallery = async (req, res) => {
-//   try {
-//     const galleryId = req.params.galleryId;
-//     const galleryExis = await galleryService.getGalleryById(galleryId);
-//     if (!galleryExis) {
-//       throw new Error("Gallery not found!");
-//     }
-//     await galleryService.updateGallery(galleryId.req.body);
-//     res.status(200).json({
-//       succcess: true,
-//       message: "Gallery update successfully!",
-//     });
-//   } catch (error) {
-//     res.status(400).json({
-//       success: false,
-//       message: error.message,
-//     });
-//   }
-// };
+// get gallery list
+const getGalleryList = async (req, res) => {
+  try {
+    const getGallery = await galleryService.getGalleryList(req, res);
+    res.status(200).json({
+      succcess: true,
+      message: "gallery get successfully!",
+      data: getGallery,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+// delete gallery list
+const deleteGallery = async (req, res) => {
+  try {
+    const galleryId = req.params.galleryId;
+    const galleryExis = await galleryService.getGalleryById(galleryId);
+    if (!galleryExis) {
+      throw new Error("Gallery not found!");
+    }
+    await galleryService.deleteGallery(galleryId);
+    res.status(200).json({
+      succcess: true,
+      message: "Gallery delete successfully!",
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+// update gallery
+const updateGallery = async (req, res) => {
+  try {
+    const galleryId = req.params.galleryId;
+    const galleryExis = await galleryService.getGalleryById(galleryId);
+    if (!galleryExis) {
+      throw new Error("Gallery not found!");
+    }
+    await galleryService.updateGallery(galleryId.req.body);
+    res.status(200).json({
+      succcess: true,
+      message: "Gallery update successfully!",
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 module.exports = {
   createGallery,
-  // getGalleryList,
-  // deleteGallery,
-  // updateGallery,
+  getGalleryList,
+  deleteGallery,
+  updateGallery,
 };

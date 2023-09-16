@@ -1,4 +1,3 @@
-const { string } = require('joi');
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema(
@@ -44,5 +43,5 @@ const userSchema = new mongoose.Schema(
         versionKey:false,
     }
 );
-const user = mongoose.model('users',userSchema);
-module.exports = user;
+const User = mongoose.model('users',userSchema);
+module.exports = User;

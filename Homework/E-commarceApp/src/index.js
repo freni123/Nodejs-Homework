@@ -2,6 +2,7 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 const routes =require('./routes/v1');
 const config = require('./config/config');
 const {connectDB} = require('./db/dbConnection');
@@ -27,7 +28,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.options("*", cors());
 
-app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname,`./public`)));
 
 //Routes Namespace upload files
 app.use("/v1", routes);

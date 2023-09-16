@@ -3,11 +3,11 @@ const config = require("../config/config");
 
 const gallerySchema = new mongoose.Schema(
   {
-    product_name: {
+    image_name: {
       type: String,
       trim: true,
     },
-    product_image: {
+    gallery_image: {
       type: String,
     },
     product: {
@@ -20,8 +20,8 @@ const gallerySchema = new mongoose.Schema(
     versionKey: false,
     toJSON: {
       transform: function (doc, data) {
-        if (data?.product_image) {
-          data.product_image = `${config.base_url}product_images/${data.product_image}`;
+        if (data?.gallery_image) {
+          data.gallery_image = `${config.base_url}gallery_image/${data.gallery_image}`;
         }
       },
     },

@@ -30,17 +30,17 @@ const getUserList = async (req, res) => {
             data: {getUser,getCategory,getProduct,getCart}
         })
     } catch (error) {
-        res.status(400);
+        res.status(400).json({ success: false, message: error.message });
     }
 }
 //  Delete user
 const deleteUser = async (req, res) => {
     try {
         const userId = req.params.userId;
-        // const userExists = await userService.getUserById(userId);
-        // if (!userExists) {
-        //   throw new Error("User not found!");
-        // }
+        const userExists = await userService.getUserById(userId);
+        if (!userExists) {
+          throw new Error("User not found!");
+        }
         await userService.deleteUser(userId);
         res.status(200).json({
             success: true,

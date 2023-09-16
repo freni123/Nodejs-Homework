@@ -12,6 +12,7 @@ const getCartList = async (req, res) => {
     }]
   });
 };
+// get cart details by id
 const getCartById = async (cartId) => {
   return cart.findById(cartId);
 };
