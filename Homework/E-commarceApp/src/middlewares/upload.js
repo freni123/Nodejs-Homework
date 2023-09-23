@@ -20,7 +20,6 @@ const storage = multer.diskStorage({
     cb(null, new Date().getTime() + ext);
   },
 });
-console.log(__dirname, "__dirname");
 const upload = multer({
   storage: storage,
 });

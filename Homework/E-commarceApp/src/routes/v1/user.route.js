@@ -17,4 +17,11 @@ router.get("/user-list", userController.getUserList);
 router.delete("/delete-user/:userId", userController.deleteUser);
 // update user list
 router.put("/update-user/:userId", userController.updateDetails);
+// Send mail
+router.post(
+  "/send-mail",
+  validate(userValidation.sendMail),
+  userController.sendMail
+);
+module.exports = router;
 module.exports = router;
