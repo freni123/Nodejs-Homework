@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 app.use(express.static("./public"));
+
 //Routes Namespace upload files
 app.use("/v1", routes);
 

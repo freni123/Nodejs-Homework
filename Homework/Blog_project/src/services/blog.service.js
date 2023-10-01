@@ -7,7 +7,7 @@ const createBlog = async (reqBody) => {
 
 // get blog list
 const getBlogList = async (req, res) => {
-    return Blog.find().populate("uploadedBy");
+    return Blog.find().populate("user");
 }
 
 // get blog id list

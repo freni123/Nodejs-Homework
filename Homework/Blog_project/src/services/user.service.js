@@ -7,7 +7,7 @@ const createUser = async (reqBody) => {
 
 // get user list
 const getUserList = async (req, res) => {
-  return User.find(req, res).populate("blog");
+  return User.find().populate("blog");
 };
 // get user by id
 const getUserById = async (userId) => {

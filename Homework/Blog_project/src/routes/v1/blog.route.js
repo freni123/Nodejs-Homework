@@ -1,14 +1,14 @@
 const express = require("express");
 const { blogValidation } = require("../../validation");
 const { blogController } = require("../../controller");
-// const validate = require("../../middlewares/validate");
+const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
 // create blog
 router.post(
   "/createBlog",
-//   validate(blogValidation.createBlog),
+  validate(blogValidation.createBlog),
   blogController.createBlog
 );
 

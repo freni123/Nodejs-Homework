@@ -1,18 +1,18 @@
-const { userService } = require("../services");
+const { postService } = require("../services");
 
-// create user
-const createUser = async (req, res) => {
+// create post
+const createPost = async (req, res) => {
   try {
     const reqBody = req.body;
-    const user = await userService.createUser(reqBody);
-    if (!user) {
-      throw new Error("user not found !");
+    const post = await postService.createPost(reqBody);
+    if (!post) {
+      throw new Error("post not found !");
     }
 
     res.status(200).json({
       success: true,
-      message: "user created successfully!",
-      data: user,
+      message: "post created successfully!",
+      data: post,
     });
   } catch (error) {
     res.status(400).json({
@@ -22,17 +22,17 @@ const createUser = async (req, res) => {
   }
 };
 
-// get list
-const getUserList = async (req, res) => {
+// get post list
+const getPostList = async (req, res) => {
   try {
-    const getList = await userService.getUserList();
+    const getList = await postService.getPostList();
     if (!getList) {
-      throw new Error("user not found !");
+      throw new Error("post not found !");
     }
 
     res.status(200).json({
       success: true,
-      message: "user list successfully!",
+      message: "post list successfully!",
       data: getList,
     });
   } catch (error) {
@@ -42,20 +42,20 @@ const getUserList = async (req, res) => {
     });
   }
 };
-// delete data
+// delete  post data
 const deleteRecord = async (req, res) => {
   try {
-    const userId = req.params.userId;
-    const userExist = await userService.getUserList(userId);
-    if (!userExist) {
-      throw new Error("user is not found !");
+    const postId = req.params.userId;
+    const postExist = await postService.getPostById(postId);
+    if (!postExist) {
+      throw new Error("post is not found !");
     }
 
-    await userService.deleteRecord(userId);
+    await postService.deleteRecord(postId);
 
     res.status(200).json({
       success: true,
-      message: "Record deleted successfully !",
+      message: "post record deleted successfully !",
     });
   } catch (error) {
     res.status(400).json({
@@ -68,17 +68,17 @@ const deleteRecord = async (req, res) => {
 // update data
 const updateRecord = async (req, res) => {
   try {
-    const userId = req.params.userId;
-    const userEx = await userService.getUserById(userId);
-    if (!userEx) {
+    const postId = req.params.postId;
+    const postExist = await postService.getPostById(postId);
+    if (!postExist) {
       throw new Error("Something wents wrong , please try again or later !");
     }
 
-    const updated = await userService.updateRecord(userId, req.body);
+    const updated = await postService.updateRecord(postId, req.body);
 
     res.status(200).json({
       success: true,
-      message: "Record updated successfully !",
+      message: " post record updated successfully !",
       data: updated,
     });
   } catch (error) {
@@ -90,8 +90,8 @@ const updateRecord = async (req, res) => {
 };
 
 module.exports = {
-  createUser,
-  getUserList,
+  createPost,
+  getPostList,
   updateRecord,
   deleteRecord,
 };

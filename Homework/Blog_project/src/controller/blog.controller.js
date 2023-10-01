@@ -12,14 +12,13 @@ const createBlog = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Blog created !",
+      message: "Blog created successfully!",
       data: blog,
     });
   } catch (error) {
-    res.status(error?.message).json({
+    res.status(400).json({
       success: false,
-      message:
-        error?.message || "Something wents wrong , please try again or later !",
+      message: error.message,
     });
   }
 };
@@ -33,14 +32,13 @@ const getBlogList = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Blog list !",
+      message: "Blog list successfully !",
       data: getList,
     });
   } catch (error) {
-    res.status(error?.message || 400).json({
+    res.status(400).json({
       success: false,
-      message:
-        error?.message || "Something wents wrong , please try again or later !",
+      message: error.message,
     });
   }
 };
@@ -60,10 +58,9 @@ const deleteRecord = async (req, res) => {
       message: "Record deleted successfully !",
     });
   } catch (error) {
-    res.status(error?.message || 400).json({
+    res.status(400).json({
       success: false,
-      message:
-        error?.message || "Something wents wrong , please try again or later !",
+      message: error.message,
     });
   }
 };
@@ -80,14 +77,13 @@ const updateRecord = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Record updated !",
+      message: "Record updated successfully!",
       data: updated,
     });
   } catch (error) {
-    res.status(error?.message || 400).json({
+    res.status(400).json({
       success: false,
-      message:
-        error?.message || "Something wents wrong , please try again or later !",
+      message: error.message,
     });
   }
 };
