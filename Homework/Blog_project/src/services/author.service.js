@@ -18,7 +18,7 @@ const updateRecord = async (authorId, updateBody) => {
   return Authors.findByIdAndUpdate(authorId, { $set: updateBody });
 };
 
-// delete Authors lisr
+// delete Authors list
 const deleteRecord = async (authorId) => {
   return Authors.findByIdAndDelete(authorId);
 };

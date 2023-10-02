@@ -69,8 +69,8 @@ const deleteRecord = async (req, res) => {
 const updateRecord = async (req, res) => {
   try {
     const userId = req.params.userId;
-    const userEx = await userService.getUserById(userId);
-    if (!userEx) {
+    const userExist = await userService.getUserById(userId);
+    if (!userExist) {
       throw new Error("Something wents wrong , please try again or later !");
     }
 
@@ -78,7 +78,7 @@ const updateRecord = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Record updated successfully !",
+      message: "user record updated successfully !",
       data: updated,
     });
   } catch (error) {

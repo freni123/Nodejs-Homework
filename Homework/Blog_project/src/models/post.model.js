@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const postsSchema = new Schema(
+const postsSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -21,6 +21,10 @@ const postsSchema = new Schema(
       type: mongoose.Types.ObjectId,
       ref: "user",
     },
+    comment: {
+      type: mongoose.Types.ObjectId,
+      ref: "comment",
+    },
     numComments: {
       type: Number,
     },
@@ -33,6 +37,6 @@ const postsSchema = new Schema(
   }
 );
 
-var Posts = mongoose.model("post", postsSchema);
+const Posts = mongoose.model("post", postsSchema);
 
 module.exports = Posts;

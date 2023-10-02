@@ -18,10 +18,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    dateOfBirth: {
-      type: String,
-      trim: true,
-    },
     blog: {
       type: mongoose.Types.ObjectId,
       ref: "blog",

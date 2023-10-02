@@ -37,6 +37,7 @@ connectDB();
 // create server using http
 const server = http.createServer(app);
 
-server.listen(config.port, () => {
-    console.log("server listening");
+const port = 4500;
+server.listen(port, () => {
+    console.log("server listening on port " + port);
 });
